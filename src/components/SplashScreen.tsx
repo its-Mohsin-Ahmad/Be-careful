@@ -8,9 +8,9 @@ export default function SplashScreen({ onComplete }: SplashScreenProps) {
   const [phase, setPhase] = useState<'loading' | 'exiting'>('loading')
 
   useEffect(() => {
-    // Show splash animation then smoothly transition to app
-    const exitTimer = setTimeout(() => setPhase('exiting'), 2400)
-    const doneTimer = setTimeout(() => onComplete(), 3000)
+    // Show splash animation for 4 seconds then smoothly transition to app
+    const exitTimer = setTimeout(() => setPhase('exiting'), 4000)
+    const doneTimer = setTimeout(() => onComplete(), 4600)
     return () => {
       clearTimeout(exitTimer)
       clearTimeout(doneTimer)
@@ -25,14 +25,14 @@ export default function SplashScreen({ onComplete }: SplashScreenProps) {
       aria-label="BE CAREFUL"
       role="status"
     >
-      {/* Center content: ONLY the animated logo and BE CAREFUL */}
+      {/* Center content: ONLY the HD animated logo and BE CAREFUL */}
       <div className="flex flex-col items-center gap-6 animate-fade-in px-4">
-        {/* Animated Logo */}
-        <div className="relative w-36 h-36 sm:w-44 sm:h-44 flex items-center justify-center">
+        {/* Animated Logo (HD) */}
+        <div className="relative w-48 h-48 sm:w-60 sm:h-60 flex items-center justify-center">
           <img
             src={`${import.meta.env.BASE_URL}logo-animated.webp`}
             alt="BE CAREFUL Logo"
-            className="w-full h-full object-contain filter drop-shadow-[0_12px_32px_rgba(0,0,0,0.35)] select-none pointer-events-none"
+            className="w-full h-full object-contain filter drop-shadow-[0_16px_40px_rgba(0,0,0,0.4)] select-none pointer-events-none"
           />
         </div>
 
