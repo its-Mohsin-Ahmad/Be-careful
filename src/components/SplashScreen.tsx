@@ -55,24 +55,26 @@ export default function SplashScreen({ onComplete }: SplashScreenProps) {
         {/* Logo block */}
         <div className="flex flex-col items-center gap-4 animate-fade-in">
           {/* Animated Medical Logo */}
-          <div className="relative w-24 h-24 animate-float">
-            {/* Outer ring */}
-            <svg viewBox="0 0 96 96" className="w-full h-full absolute inset-0" aria-hidden="true">
-              <circle cx="48" cy="48" r="44" stroke="rgba(255,255,255,0.15)" strokeWidth="2" fill="none" />
-              <circle cx="48" cy="48" r="44" stroke="rgba(255,255,255,0.4)" strokeWidth="2" fill="none"
-                strokeDasharray="276" strokeDashoffset="200"
+          <div className="relative w-32 h-32 sm:w-36 sm:h-36 flex items-center justify-center animate-float">
+            {/* Outer spinning ring */}
+            <svg viewBox="0 0 120 120" className="w-full h-full absolute inset-0 pointer-events-none" aria-hidden="true">
+              <circle cx="60" cy="60" r="54" stroke="rgba(255,255,255,0.15)" strokeWidth="2" fill="none" />
+              <circle cx="60" cy="60" r="54" stroke="rgba(45,212,191,0.6)" strokeWidth="2.5" fill="none"
+                strokeDasharray="340" strokeDashoffset="240"
                 style={{ animation: 'spin 4s linear infinite', transformOrigin: 'center' }} />
             </svg>
-            {/* Inner shield */}
-            <div className="absolute inset-3 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 flex items-center justify-center">
-              <svg viewBox="0 0 48 48" className="w-10 h-10" fill="none" aria-hidden="true">
-                {/* Medical cross */}
-                <rect x="19" y="8"  width="10" height="32" rx="3" fill="white" />
-                <rect x="8"  y="19" width="32" height="10" rx="3" fill="white" />
-                {/* Heart */}
-                <path d="M24 36 C24 36 16 30 16 24 C16 21 18 19 20.5 19 C22 19 23.2 19.8 24 21 C24.8 19.8 26 19 27.5 19 C30 19 32 21 32 24 C32 30 24 36 24 36Z"
-                  fill="rgba(59,151,245,0.4)" />
-              </svg>
+
+            {/* Animated Logo - 100% transparent background, floating */}
+            <div className="relative w-28 h-28 sm:w-32 sm:h-32 flex items-center justify-center p-2">
+              <img
+                src="/logo-animated.webp"
+                alt="BE CAREFUL animated logo"
+                className="w-full h-full object-contain filter drop-shadow-[0_8px_24px_rgba(0,0,0,0.35)] select-none pointer-events-none"
+              />
+              <span className="absolute top-1 right-1 flex h-3 w-3">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+                <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-400 border border-white" />
+              </span>
             </div>
           </div>
 
