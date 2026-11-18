@@ -47,7 +47,7 @@ function PageLoader() {
   return (
     <div className="flex items-center justify-center min-h-[40vh]">
       <div className="flex flex-col items-center gap-3 animate-fade-in">
-        <img src="/logo-animated.webp" alt="BE CAREFUL" className="w-12 h-12 object-contain" />
+        <img src={`${import.meta.env.BASE_URL}logo-animated.webp`} alt="BE CAREFUL" className="w-12 h-12 object-contain" />
         <span className="text-xs font-bold text-primary-700 tracking-wider">BE CAREFUL</span>
       </div>
     </div>

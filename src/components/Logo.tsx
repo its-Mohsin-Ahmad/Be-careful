@@ -60,7 +60,9 @@ export default function Logo({
   const s = sizeClasses[size] || sizeClasses.md
 
   // Choose between animated webp and static png fallback
-  const logoSrc = animated && !imgError ? '/logo-animated.webp' : '/logo.png'
+  const logoSrc = animated && !imgError
+    ? `${import.meta.env.BASE_URL}logo-animated.webp`
+    : `${import.meta.env.BASE_URL}logo.png`
 
   return (
     <button

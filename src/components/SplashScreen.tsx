@@ -30,7 +30,7 @@ export default function SplashScreen({ onComplete }: SplashScreenProps) {
         {/* Animated Logo */}
         <div className="relative w-36 h-36 sm:w-44 sm:h-44 flex items-center justify-center">
           <img
-            src="/logo-animated.webp"
+            src={`${import.meta.env.BASE_URL}logo-animated.webp`}
             alt="BE CAREFUL Logo"
             className="w-full h-full object-contain filter drop-shadow-[0_12px_32px_rgba(0,0,0,0.35)] select-none pointer-events-none"
           />
